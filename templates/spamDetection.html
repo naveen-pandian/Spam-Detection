@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>SpamDetection</title>
+    <link rel="icon" href="https://www.bsgtech.com/images/msp-icons/spam-protection.jpg" type="image/jpg">
+
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+
+		<meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+        <script src="http://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
+
+
+
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300' rel='stylesheet' type='text/css'>
+
+		<link href="https://fonts.googleapis.com/css?family=Raleway:100,400,700" rel="stylesheet">
+
+		<link href="https://fonts.googleapis.com/css?family=Oswald:200,400,700" rel="stylesheet">
+
+
+
+
+		<script src="https://use.fontawesome.com/20ab91acc4.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  		<link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+
+
+	</head>
+	<style>
+      	html {
+            scroll-behavior: smooth;
+        }
+        
+		 /* contact */
+
+		 .body2 {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  padding-bottom: 100px;
+}
+		#contact {
+  width: 100%;
+  height: 100%;
+}
+
+.section-header {
+  text-align: center;
+  margin: 0 auto;
+  padding: 40px 0;
+  font: 300 60px 'Oswald', sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  max-width: 840px;
+}
+
+/* Left contact page */
+.form-horizontal {
+  /*float: left;*/
+  max-width: 400px;
+  font-family: 'Lato';
+  font-weight: 400;
+}
+
+.form-control, 
+textarea {
+  max-width: 400px;
+  background-color: #000;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.send-button {
+  margin-top: 15px;
+  height: 34px;
+  width: 400px;
+  overflow: hidden;
+  transition: all .2s ease-in-out;
+}
+
+.alt-send-button {
+  width: 400px;
+  height: 34px;
+  transition: all .2s ease-in-out;
+}
+
+.send-text {
+  display: block;
+  margin-top: 10px;
+  font: 700 12px 'Lato', sans-serif;
+  letter-spacing: 2px;
+}
+
+.alt-send-button:hover {
+  transform: translate3d(0px, -29px, 0px);
+}
+
+/* Begin Right Contact Page */
+.direct-contact-container {
+  max-width: 400px;
+}
+
+/* Location, Phone, Email Section */
+.contact-list {
+  list-style-type: none;
+  margin-left: -30px;
+  padding-right: 20px;
+}
+
+.list-item {
+  line-height: 4;
+  color: #aaa;
+}
+
+.contact-text {
+  font: 300 18px 'Lato', sans-serif;
+  letter-spacing: 1.9px;
+  color: #bbb;
+}
+
+.place {
+  margin-left: 62px;
+}
+
+.phone {
+  margin-left: 56px;
+}
+
+.gmail {
+  margin-left: 53px;
+}
+
+.contact-text a {
+  color: #bbb;
+  text-decoration: none;
+  transition-duration: 0.2s;
+}
+
+.contact-text a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/* Social Media Icons */
+.social-media-list {
+  position: relative;
+  font-size: 22px;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.social-media-list li a {
+  color: #fff;
+}
+
+.social-media-list li {
+  position: relative; 
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  margin: 10px 3px;
+  line-height: 60px;
+  border-radius: 50%;
+  color: #fff;
+  background-color: rgb(27,27,27);
+  cursor: pointer; 
+  transition: all .2s ease-in-out;
+}
+
+
+
+.social-media-list li:hover {
+  background-color: #fff; 
+}
+
+.social-media-list li:hover:after {
+  opacity: 1;  
+  transform: scale(1.12);
+  transition-timing-function: cubic-bezier(0.37,0.74,0.15,1.65);
+}
+
+.social-media-list li:hover a {
+  color: #000;
+}
+
+.copyright {
+  font: 200 14px 'Oswald', sans-serif;
+  color: #555;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+hr {
+  border-color: rgba(255,255,255,.6);
+}
+
+/* Begin Media Queries*/
+@media screen and (max-width: 850px) {
+  .contact-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .direct-contact-container, .form-horizontal {
+    margin: 0 auto;
+  }  
+  
+  .direct-contact-container {
+    margin-top: 60px;
+    max-width: 300px;
+  }    
+  .social-media-list li {
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+  }
+  .social-media-list li:after {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+  }
+}
+
+@media screen and (max-width: 569px) {
+
+  .direct-contact-container, .form-wrapper {
+    float: none;
+    margin: 0 auto;
+  }  
+  .form-control, textarea {
+    
+    margin: 0 auto;
+  }
+ 
+  
+  .name, .email, textarea {
+    width: 280px;
+  } 
+  
+  .direct-contact-container {
+    margin-top: 60px;
+    max-width: 280px;
+  }  
+  .social-media-list {
+    left: 0;
+  }
+  .social-media-list li {
+    height: 55px;
+    width: 55px;
+    line-height: 55px;
+    font-size: 2rem;
+  }
+  .social-media-list li:after {
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+  }
+  
+}
+
+@media screen and (max-width: 410px) {
+  .send-button {
+    width: 99%;
+  }
+}
+
+
+
+
+	</style>
+
+<script>
+	window.console = window.console || function(t) {};
+  </script>
+  
+	
+	
+	<script>
+	if (document.location.search.match(/type=embed/gi)) {
+	  window.parent.postMessage("resize", "*");
+	}
+  </script>
+
+	<body class="firstpage"  onload="myFunction()">
+
+    <section id="loader">
+      <div class="loading">
+          <div class="blocks" style="--i:1;"></div>
+          <div class="blocks" style="--i:2;"></div>
+          <div class="blocks" style="--i:3;"></div>
+          <div class="blocks" style="--i:4;"></div>
+          <div class="blocks" style="--i:5;"></div>
+          <div class="blocks" style="--i:6;"></div>
+          <div class="blocks" style="--i:7;"></div>
+          <div class="blocks" style="--i:8;"></div>
+          <div class="blocks" style="--i:9;"></div>
+          <div class="blocks" style="--i:10;"></div>
+          <div class="blocks" style="--i:11;"></div>
+          <div class="blocks" style="--i:12;"></div>
+          <div class="blocks" style="--i:13;"></div>
+          <div class="blocks" style="--i:14;"></div>
+          <div class="blocks" style="--i:15;"></div>
+          <div class="blocks" style="--i:16;"></div>
+          <div class="blocks" style="--i:17;"></div>
+          <div class="blocks" style="--i:18;"></div>
+          <div class="blocks" style="--i:19;"></div>
+          <div class="blocks" style="--i:20;"></div>
+          
+      </div>
+      <h3>Loading</h3>
+  </section>
+
+    <div id="myDiv">
+      
+    <nav class="navtop" id="section1">
+			<div>
+				<h1>Spam Detection</h1>
+                <a href="{{ url_for('login') }}"><i class="fas fa-users"></i>Login</a>
+				<a href="{{ url_for('register') }}"><i class="fas fa-user-plus"></i>Register</a>				
+			</div>
+		</nav>
+    
+		<div class="content1">
+            <h2>Welcome to our website...</h2>
+			<div>
+                This is our Website. Make sure you <a href="{{ url_for('login') }}">login</a>/<a href="{{ url_for('register') }}">register</a> before use this application..... 
+				<br>
+				<a href="#section2">App Info</a>
+            </div>
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		
+    </div>
+		<script type="text/javascript">
+			window.addEventListener('scroll',reveal);
+	
+			function reveal(){
+				var reveals = document.querySelectorAll('.reveal');
+	
+				for(var i=0;i<reveals.length;i++){
+	
+					var windowheight = window.innerHeight;
+					var revealtop = reveals[i].getBoundingClientRect().top;
+					var revealpoint = 150;
+	
+					if(revealtop < windowheight - revealpoint){
+						reveals[i].classList.add('active');
+					}
+					else{
+						reveals[i].classList.remove('active');
+					}
+				}
+			}
+		</script>
+		
+		<div class="body1" id="section2">
+			<h1 class="reveal" style="font-size:40px;text-align:center;padding: 10px;font-family: playfair display;">PROTECT YOURSELF FROM BEFORE IT HAPPENS</h1>
+				<div class="container reveal">
+					<div class="swiper">
+	
+						<div class="swiper-wrapper">
+				 
+						<div class="swiper-slide"><img class="pslide" src="/static/first page.png"></div>
+						<div class="swiper-slide"><img class="pslide" src="/static/login page.png"></div>
+						<div class="swiper-slide"><img class="pslide" src="/static/register page.png"></div>
+						<div class="swiper-slide"><img class="pslide" src="/static/home page.png"></div>
+						<div class="swiper-slide"><img class="pslide" src="/static/about page.png"></div>
+						<div class="swiper-slide"><img class="pslide" src="/static/edit page.png"></div>
+						<div class="swiper-slide"><img class="pslide" src="/static/profile page.png"></div>
+						<div class="swiper-slide"><img class="pslide" src="/static/logout page.png"></div>
+				
+						</div>
+			  
+						<div class="swiper-pagination"></div>
+			
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
+	
+						</div>
+				</div>
+			  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+		<script>
+		const swiper = new Swiper('.swiper', {
+	
+			autoplay: {
+				delay: 3000,
+				disableOnInteration: false,
+			},
+			loop : true,
+	
+			pagination: {
+			  el: '.swiper-pagination',
+			  clickable: true,
+			},
+		  
+			navigation: {
+			  nextEl: '.swiper-button-next',
+			  prevEl: '.swiper-button-prev',
+			},
+		  });
+		  </script>
+		  <p style="text-align:center"><a href="#section1">Do Detection</a></p>
+
+
+		  <div class="con reveal">
+        <img id="gif1" src="https://i.pinimg.com/originals/ff/65/72/ff6572c0af29f1c98be8d52254ff187e.gif">
+        <p>Phishing is a form of fraud in which the attacker tries to learn sensitive information 
+            such as login credentials or account information by sending as a reputable entity or person in 
+            email or other communication channels.<br>
+            Typically a victim receives a message that appears to have been sent by a known contact or 
+            organization. The message contains malicious software targeting the user’s computer 
+            or has links to direct victims to malicious websites in order to trick them into divulging 
+            personal and financial information, such as passwords, account IDs or credit card details.
+			<a href="#section1">Do Detection</a><br><br></p>
+            </div>
+            <div class="con reveal">
+            <strong style="font-size:30px;margin-top: 30px;color:lightseagreen;text-align: center;">TERMS TO KNOW</strong><br><br>
+            </div>
+        <div class="con reveal">
+            <p>Every phishing scam will vary in its sophistication, so some emails may be very obviously fake while other emails can be incredibly convincing.
+            If you ever suspect an email is a phishing attack, do not click on any links or download any attached files.
+            Find another way to contact the supposed sender to see if the email is legit. If the email's from a company, you can search online for their phone number. 
+            If it's from a friend or colleague, you can message them or give them a call.</p>
+			<a href="#section1">Do Detection</a>
+            <img id="gif2" src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_60/3006089/465270_638695.gif">
+    </div>
+    
+	<div class="body2" translate="no" id="section3">
+		<section id="contact">
+		
+		<h1 class="section-header">Contact</h1>
+		
+		<div class="contact-wrapper">
+		
+		<!-- Left contact page --> 
+		  
+		  <form id="contact-form" class="form-horizontal" role="form">
+			 
+			<div class="form-group">
+			  <div class="col-sm-12">
+				<input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="" required>
+			  </div>
+			</div>
+	  
+			<div class="form-group">
+			  <div class="col-sm-12">
+				<input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required>
+			  </div>
+			</div>
+	  
+			<textarea class="form-control" rows="10" placeholder="POST YOUR COMMENTS HERE" name="message" required></textarea>
+			
+			<button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+			  <div class="alt-send-button">
+				<i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
+			  </div>
+			
+			</button>
+			
+		  </form>
+		  
+		<!-- Left contact page --> 
+		  
+			<div class="direct-contact-container" style="margin-left:40px">
+	  
+			  <ul class="contact-list">
+				<li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">ERODE,TAMILNADU,INDIA</span></i></li>
+				
+				<li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:916382710359" title="Give me a call">+91 6382710359</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tel:919360578857" title="Give me a call">+91 9360578857</a></span></i></li>
+				
+				<li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:naveenpandianp5@gmail.com" title="Send me an email">naveenpandianp5@gmail.com</a><br><a href="mailto:vijayragu.m@gmail.com" title="Send me an email">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vijayragu.m@gmail.com</a><br><a href="mailto:mayil7299@gmail.com" title="Send me an email">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mayil7299@gmail.com</a><br><a href="mailto:praveenkumar.p.m@nandhatech.org" title="Send me an email">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;praveenkumar.p.m@nandhatech.org</a></span></i></li>
+        
+				
+			  </ul>
+	  
+			  <hr>
+			  <ul class="social-media-list">
+				<li><a href="https://github.com/naveen-pandian" target="_blank" class="contact-icon">
+				  <i class="fa fa-github" aria-hidden="true"></i></a>
+				</li>
+				<li><a href="https://www.youtube.com/@naveenpandianp7628/" target="_blank" class="contact-icon">
+				  <i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+				</li>
+				<li><a href="https://www.facebook.com/naveen.pandian.3192" target="_blank" class="contact-icon">
+				  <i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+				</li>
+				<li><a href="https://www.instagram.com/mr_little_np/" target="_blank" class="contact-icon">
+				  <i class="fa fa-instagram" aria-hidden="true"></i></a>
+				</li>       
+			  </ul>
+			  <hr>
+	  
+			  <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED</div>
+              <div class="copyright">Copyright@2019-2023-NCT-IV-CSE</div>
+	  
+			</div>
+		  
+		</div>
+		
+	  </section>
+		  <script data-cfasync="false" src="https://cdpn.io/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+	  
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+			<script id="rendered-js" >
+	  document.querySelector('#contact-form').addEventListener('submit', e => {
+		e.preventDefault();
+		e.target.elements.name.value = '';
+		e.target.elements.email.value = '';
+		e.target.elements.message.value = '';
+	  });
+	  //# sourceURL=pen.js
+		  </script>
+
+		  </div>
+    
+
+	    </div>
+
+
+      
+
+      <script>
+        var myVar;
+        
+        function myFunction() {
+          myVar = setTimeout(showPage, 3000);
+        }
+        
+        function showPage() {
+          document.getElementById("loader").style.display = "none";
+          document.getElementById("myDiv").style.display = "block";
+        }
+        </script>
+	</body>
+</html>

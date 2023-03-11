@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Logout</title>
+        <link rel="icon" href="https://www.bsgtech.com/images/msp-icons/spam-protection.jpg" type="image/jpg">
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+        <style>
+            .main
+                {
+                    align-content: center;
+                    text-align: center;
+                    margin: 10px;
+                }
+            #butto:focus
+                {
+                        width: 25%;
+                        background-color: skyblue;
+                }
+            #butto
+               {
+                    background-color:royalblue;
+                    padding : 10px 30px;
+                    align-content: center;
+                    font-size: 15px;
+                    border-radius: 5px;
+                    width: 20%;
+                    color: white;
+                }
+        </style>
+	</head>
+	<body  class="loggedin"  onload="myFunction()">
+
+        <section id="loader">
+            <div class="loading">
+                <div class="blocks" style="--i:1;"></div>
+                <div class="blocks" style="--i:2;"></div>
+                <div class="blocks" style="--i:3;"></div>
+                <div class="blocks" style="--i:4;"></div>
+                <div class="blocks" style="--i:5;"></div>
+                <div class="blocks" style="--i:6;"></div>
+                <div class="blocks" style="--i:7;"></div>
+                <div class="blocks" style="--i:8;"></div>
+                <div class="blocks" style="--i:9;"></div>
+                <div class="blocks" style="--i:10;"></div>
+                <div class="blocks" style="--i:11;"></div>
+                <div class="blocks" style="--i:12;"></div>
+                <div class="blocks" style="--i:13;"></div>
+                <div class="blocks" style="--i:14;"></div>
+                <div class="blocks" style="--i:15;"></div>
+                <div class="blocks" style="--i:16;"></div>
+                <div class="blocks" style="--i:17;"></div>
+                <div class="blocks" style="--i:18;"></div>
+                <div class="blocks" style="--i:19;"></div>
+                <div class="blocks" style="--i:20;"></div>
+                
+            </div>
+            <h3>Loading</h3>
+        </section>
+        <div id="myDiv">
+
+		<nav class="navtop">
+			<div>
+				<h1>Spam Detection</h1>
+                <a href="{{ url_for('home') }}"><i class="fa fa-chevron-left"></i>Back</a>				
+			</div>
+		</nav>
+		<div class="content">
+            <div>
+            <p> Are you sure want to logout ? <p>
+            <div class="main">
+                <a href="/spamDetection/logout/confirm"><input id="butto" type="button" value="Yes"></a>
+                <a href="/spamDetection/home"><input id="butto" type="button" value="No"></a>
+            </div>
+            <div>
+		</div>
+    </div>
+    
+    <script>
+        var myVar;
+        
+        function myFunction() {
+          myVar = setTimeout(showPage, 3000);
+        }
+        
+        function showPage() {
+          document.getElementById("loader").style.display = "none";
+          document.getElementById("myDiv").style.display = "block";
+        }
+        </script>
+        
+	</body>
+</html>

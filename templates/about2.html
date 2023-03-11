@@ -1,0 +1,39 @@
+<style>
+    .main
+        {
+            align-content: center;
+            text-align: center;
+            margin: 10px;
+        }
+    #butto:focus
+        {
+                width: 25%;
+                background-color: skyblue;
+        }
+    #butto
+       {
+            background-color:royalblue;
+            padding : 10px 30px;
+            align-content: center;
+            font-size: 15px;
+            border-radius: 5px;
+            width: 20%;
+            color: white;
+        }
+</style>
+{% extends 'layout.html' %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+<h2>About Page</h2>
+<div>
+    
+<p>This the last page for this information.....</p>
+<br><br><br><br><p>hi Iam ready to stop...     The End</p>
+<div class="main">
+    <a href="{{ url_for('about1') }}"><input id="butto" type="button" value= "< Previous"></a>
+    </div>
+</div>
+<a href="{{ url_for('home') }}"><input id="butto" type="button" value="Back"></a>
+{% endblock %}

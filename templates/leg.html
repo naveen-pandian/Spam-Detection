@@ -1,0 +1,44 @@
+<style>
+    .main
+        {
+            align-content: center;
+            text-align: center;
+            margin: 10px;
+        }
+    #butto:focus
+        {
+                width: 25%;
+                background-color: skyblue;
+        }
+    #butto
+       {
+            background-color:royalblue;
+            padding : 10px 30px;
+            align-content: center;
+            font-size: 15px;
+            border-radius: 5px;
+            width: 20%;
+            color: white;
+        }
+    </style>
+    {% extends 'layout.html' %}
+    
+    {% block title %}Url Detection{% endblock %}
+    
+    {% block content %}
+    <h2>Url Detection</h2>
+    <div class = "main">
+      
+        <div>
+            {% if pred == 1 %}
+                <p style="color:green;text-decoration: none;font-size:30px;margin-top: 30px;">{{ prediction_text }}</p>
+                <p style="color:blue;font-size: 20px;"><a href="{{ url }}">{{ url }}</a></p>
+            {% else %}
+                <p style="color:red;text-decoration: none;font-size:30px;margin-top: 30px;">{{ prediction_text }}</p>
+                <p style="color:blue"><a href="{{ url }}">{{ url }}</a></p>
+            {% endif %}
+        </div>
+    <a href="/spamDetection/url/"><input id="butto" type="button" value="Back"></a>
+    </div>
+    
+    {% endblock %}
